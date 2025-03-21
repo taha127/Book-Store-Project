@@ -6,7 +6,6 @@
 
 {% block content %}
     <h1>Home</h1>
-    <p>Welcome to the home page!</p>
     {% if user.is_authenticated %}
         <p style="display: inline-block">Welcome {{ user.username }}. </p>
         <form action="{% url 'logout' %}" method="POST"
