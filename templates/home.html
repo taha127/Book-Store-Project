@@ -7,12 +7,15 @@
 {% block content %}
     <h1>Home</h1>
     {% if user.is_authenticated %}
-        <p style="display: inline-block">Welcome {{ user.username }}. </p>
+        <p style="display: block">Welcome {{ user.username }}. </p>
         <form action="{% url 'logout' %}" method="POST"
-              style="display: inline-block">
+              style="display: inline">
             {% csrf_token %}
             <button type="submit" class="btn btn-danger mt-3">logout</button>
         </form>
+        <a href="{% url 'password_change' %}">
+            <button type="submit" class="btn btn-warning mt-3">reset password</button>
+        </a>
     {% else %}
         <a href="{% url 'login' %}"> login </a> | <a href="{% url 'signup' %}"> signup </a>
     {% endif %}
