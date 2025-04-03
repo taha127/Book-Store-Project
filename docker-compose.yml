@@ -7,9 +7,11 @@ services:
     volumes:
       - .:/code
     ports:
-      - 8000:8000
+      - "8000:8000"
 
   db:
     image: postgres:17.0
+    ports:
+      - "5432:5432"
     environment:
       - "POSTGRES_HOST_AUTH_METHOD=trust"

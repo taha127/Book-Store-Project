@@ -1,8 +1,7 @@
 .venv/
-#db.sqlite3
+db.sqlite3
 .vscode/
 .idea/
-#media/
 Dockerfile
 docker-compose.yml
 __pycache__/
